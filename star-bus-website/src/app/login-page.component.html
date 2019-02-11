@@ -1,0 +1,13 @@
+<div class="container">
+        <form>
+            <h1>Login</h1>
+            <p>Sign in to continue to StarBus</p>
+            <hr>
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="name" [(ngModel)]="user.email" required>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password" required>
+            <button type="submit" class="registerbtn" (click)="store()">Login</button>
+            <hr>
+        </form>
+</div>
