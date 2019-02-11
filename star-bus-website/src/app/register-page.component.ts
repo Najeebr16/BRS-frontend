@@ -16,8 +16,8 @@ import { UserService } from './register-page-service';
    }
 
      store(){
-      let url=''
-      this.ur.sendToServer(url).subscribe(data=>{
+      let url='http://localhost:8181/bus/add'
+      this.ur.sendToServer(url,this.users).subscribe(data=>{
       
       });
           }

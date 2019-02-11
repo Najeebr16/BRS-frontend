@@ -4,10 +4,10 @@
             <p>Sign in to continue to StarBus</p>
             <hr>
             <label for="name"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="name" [(ngModel)]="user.email" required>
+            <input type="text" placeholder="Enter Username" name="name" [(ngModel)]="email" required>
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password" required>
-            <button type="submit" class="registerbtn" (click)="store()">Login</button>
+            <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+            <button type="submit" class="registerbtn" (click)="verify()">Login</button>
             <hr>
         </form>
 </div>
