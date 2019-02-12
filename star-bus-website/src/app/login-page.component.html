@@ -9,5 +9,7 @@
             <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="login.password" required>
             <button type="submit" class="registerbtn" (click)="verify()">Login</button>
             <hr>
+            <p>Already have an account? Click here to <a routerLink="/register-page" routerLinkActive="active">Sign In</a>
+            <router-outlet></router-outlet></p>
         </form>
 </div>

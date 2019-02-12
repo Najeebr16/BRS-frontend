@@ -13,6 +13,13 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { LoginService } from './login-page-service';
 import { BusService } from './bus-service';
 
+const appRoutes: Routes = [
+  { path: 'login-page', component: VerifyLoginComponent },
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'register-page', component: AddUserComponent },
+];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +32,10 @@ import { BusService } from './bus-service';
 
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path :'register-page',component:AddUserComponent},
-      {path :'login-page',component:VerifyLoginComponent}
-    ]),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    ),
     AppRoutingModule
   ],
   providers: [UserService, HttpClient, LoginService, BusService],

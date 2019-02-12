@@ -1,0 +1,29 @@
+
+<div class="panel">
+    <div class="panel-heading">{{ title }}</div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table>
+                <thead class="table">
+                    <tr>
+                        <th>FlightNo.</th>
+                        <th>Name</th>
+                        <th>From</th>
+                        <th>To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let p of flights'>
+                        <td>{{p.fno}}</td>
+                        <td>{{p.fname}}</td>
+                        <td>{{p.fromCity}}</td>
+                        <td>{{p.toCity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    From<input [(ngModel)] = "flight_from" ><br />
+    To <input [(ngModel)]="flight_to" ><br />
+    <input type="submit" value="Search" (click) = "search(flight_from,flight_to)" />
