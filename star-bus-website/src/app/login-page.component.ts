@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from './register-page-service';
 import { User } from './user'
 import { LoginService } from './login-page-service';
+import { Login } from './login';
 
 
  @Component({
@@ -11,15 +12,16 @@ import { LoginService } from './login-page-service';
 
  export class VerifyLoginComponent{
 
-    constructor( public ur:LoginService){
+    login: Login = new Login();
+    constructor( public lr:LoginService){
 
     }
 
     verify(){
-        let url1='http://localhost:8181/verify'
-        this.ur.sendToServer(url1).subscribe(data=>{
+        let url1='http://localhost:8181/buslogin/verify';
+        this.lr.sendToServer(url1,this.login).subscribe(data=>{
+      
+      });
+          }
         
-        });
     }
-
- }
