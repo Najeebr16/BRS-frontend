@@ -1,9 +1,9 @@
 export class Bus{
-    constructor(public id? : number,
-        public name?: string,
+    constructor(public bus_id? : number,
+        public busname?: string,
         public source?: string,
         public destination?: string,
-        public fare?: number,
+        public tfare?: number,
         ) { }
 
 }

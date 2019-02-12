@@ -16,7 +16,7 @@ import { LoginService } from './login-page-service';
     }
 
     verify(){
-        let url1='http://localhost:8181/bus/add'
+        let url1='http://localhost:8181/verify'
         this.ur.sendToServer(url1).subscribe(data=>{
         
         });

@@ -17,11 +17,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let f of flights'>
-                        <td>{{f.flight_id}}</td>
-                        <td>{{f.flight_name}}</td>
-                        <td>{{f.from}}</td>
-                        <td>{{f.to}}</td>
+                    <tr *ngFor='let f of buses'>
+                        <td>{{f.bus_id}}</td>
+                        <td>{{f.busname}}</td>
+                        <td>{{f.source}}</td>
+                        <td>{{f.destination}}</td>
+                        <td>{{f.tfare}}</td>
                     </tr>
                 </tbody>
             </table>
