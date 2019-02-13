@@ -13,15 +13,19 @@ import { Login } from './login';
  export class VerifyLoginComponent{
 
     login: Login = new Login();
-    constructor( public lr:LoginService){
+    response: string;
+    constructor( private lr:LoginService){
 
     }
 
-    verify(){
-        let url1='http://localhost:8181/buslogin/verify';
-        this.lr.sendToServer(url1,this.login).subscribe(data=>{
-      
-      });
+    add(mform){
+       this.lr.sendToServer(this.login).subscribe(
+          data =>{
+                   
+                   this.response = data['status'];
+                   console.log(data);
+                 }
+      );
           }
         
     }

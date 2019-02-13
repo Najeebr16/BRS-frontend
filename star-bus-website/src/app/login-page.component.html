@@ -1,5 +1,5 @@
 <div class="container">
-        <form>
+        <form #mform= "ngForm" (ngSubmit)= "add(mform)" class="form table-responsive">
             <h1>Login</h1>
             <p>Sign in to continue to StarBus</p>
             <hr>
@@ -7,7 +7,7 @@
             <input type="text" placeholder="Enter Username" name="name" [(ngModel)]="login.email" required>
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="login.password" required>
-            <button type="submit" class="registerbtn" (click)="verify()">Login</button>
+            <button type="submit" class="registerbtn">Login</button>
             <hr>
             <p>Already have an account? Click here to <a routerLink="/register-page" routerLinkActive="active">Sign In</a>
             <router-outlet></router-outlet></p>

@@ -6,14 +6,14 @@ import { Login } from './login';
 
 @Injectable()
 export class LoginService {
-    login: Login[];
     
 constructor(private http:HttpClient){
 
 }
-sendToServer(url,login){
+sendToServer(login: Login){
     //our code to be communicated with the server will be here
- return this.http.post(url,this.login) ;
+    let url ="http://localhost:8181/verify"
+ return this.http.post(url,login) ;
  
   }
     
