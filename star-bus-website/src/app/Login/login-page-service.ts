@@ -1,7 +1,6 @@
 
 import { Injectable,  OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { User } from './user';
 import { Login } from './login';
 
 @Injectable()

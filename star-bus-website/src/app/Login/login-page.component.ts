@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from './register-page-service';
-import { User } from './user'
 import { LoginService } from './login-page-service';
 import { Login } from './login';
 

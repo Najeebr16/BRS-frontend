@@ -3,20 +3,35 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { AddUserComponent } from './register-page.component';
-import { VerifyLoginComponent } from './login-page.component';
+import { AddUserComponent } from './Register/register-page.component';
+import { VerifyLoginComponent } from './Login/login-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { HomePageComponent } from './home-page.component';
-import { UserService } from './register-page-service';
+import { HomePageComponent } from './HomePage/home-page.component';
+import { UserService } from './Register/register-page-service';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import { LoginService } from './login-page-service';
-import { BusService } from './bus-service';
+import { LoginService } from './Login/login-page-service';
+import { BusService } from './Bus/bus-service';
+import { DashBoardComponent } from './dashboard/dashboard.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { UserBookingComponent } from './Dashboard/Booking/booking.component';
+import { ChangePassComponent } from './Dashboard/ChangePassword/changepass.component';
+import { UserProfileComponent } from './Dashboard/Profile/profile.component';
+import { UserWalletComponent } from './Dashboard/Wallet/wallet.component';
+
+
 
 const appRoutes: Routes = [
   { path: 'login-page', component: VerifyLoginComponent },
   { path: 'home-page', component: HomePageComponent },
   { path: 'register-page', component: AddUserComponent },
+  { path: 'booking-user', component: UserBookingComponent},
+  { path: 'change-pass', component: ChangePassComponent},
+  { path: 'profile-user', component: UserProfileComponent},
+  { path: 'wallet-user', component: UserWalletComponent},
+  { path: 'dash-board', component: DashBoardComponent},
 ];
 
 
@@ -25,11 +40,16 @@ const appRoutes: Routes = [
     AppComponent,
     AddUserComponent,
     VerifyLoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    DashBoardComponent,
+    UserBookingComponent,
+    ChangePassComponent,
+    UserProfileComponent,
+    UserWalletComponent
   ],
   imports: [
     BrowserModule,
-
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(

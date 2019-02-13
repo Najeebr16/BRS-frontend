@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Bus } from './bus';
-import { BusService } from './bus-service';
+import { Bus } from '../Bus/bus';
+import { BusService } from '../Bus/bus-service';
 
 
  @Component({
