@@ -1,10 +1,9 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import 'D:\git\BRS-frontend\star-bus-website\src\assets\css\homepage.css';
-
+@import 'D:\project\BRS-frontend\star-bus-website\src\assets\css\homepage.css';
 body {
 font-family: Arial, Helvetica, sans-serif;
-background-color: rgb(29, 199, 185);
+background-image: "D:\project\BRS-frontend\star-bus-website\src\assets\images\busbg.jpeg"
 }
 
 * {
@@ -14,7 +13,7 @@ box-sizing: border-box;
 /* Add padding to containers */
 .container {
 padding: 16px;
-background-color: rgb(62, 84, 156);
+background-color: rgb(62, 145, 156);
 }
 
 /* Full-width input fields */

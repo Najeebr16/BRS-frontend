@@ -1,19 +1,17 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Bus } from './bus';
+import { ConfirmBooking } from './confirm';
 
 @Injectable()
-export class BusService {
+export class ConfirmService {
 
     // injecting Angular's HttpClient API
     constructor(private http: HttpClient) {}
 
 
     // get products from server
-    retrieveFromServer(url2) : Observable <Bus[]> {
-         return this.http.get<Bus[]>(url2);
+    retrieveFromServer(url11) : Observable <ConfirmBooking[]> {
+         return this.http.get<ConfirmBooking[]>(url11);
     }
-    
 }

@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-
+import { Component, OnInit } from '@angular/core';
 
  @Component({
     selector : 'dash-board',
@@ -9,6 +6,11 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
     styleUrls: ['./dashboard.component.css']
  })
 
- export class DashBoardComponent{
+ export class DashBoardComponent implements OnInit {
     title : 'DashBoard';
+    name: string;
+
+    ngOnInit() {
+        this.name = sessionStorage.getItem("name");
+    }
  }

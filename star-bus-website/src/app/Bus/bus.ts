@@ -4,6 +4,9 @@ export class Bus{
         public source?: string,
         public destination?: string,
         public tfare?: number,
+        public date?: string,
+        public time?: string,
+        public type?: string
         ) { }
 
 }

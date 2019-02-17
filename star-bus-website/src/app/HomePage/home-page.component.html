@@ -1,19 +1,58 @@
 <div class="panel">
-   
     <div class="panel-heading">{{ title }}</div>
- 
     <div class="panel-body">
         <div class="container">
-                <input class="form-control form-control-lg" [(ngModel)]="from" type="text" placeholder="From">
-                <input class="form-control form-control-lg" [(ngModel)]="to" type="text" placeholder="To">
+            <form #mform= "ngForm" (ngSubmit)= "getBus()" ngNativeValidate>
+            <select class="form-control form-control-lg" [(ngModel)]="busavail.source" name = "source">
+                <!--<option value="" disabled selected>From</option>-->
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Goa">Goa</option>
+                <option value="Kashmir">Kashmir</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gujarat">Gujarat</option>
+            </select><br>
+            <select class="form-control form-control-lg" [(ngModel)]="busavail.destination" placeholder="To" name = "destination">
+                <!--<option value="" disabled selected>To</option>-->
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Goa">Goa</option>
+                <option value="Kashmir">Kashmir</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gujarat">Gujarat</option>
+            </select><br>
+
+            <h3>Filters :</h3>
+            <label for="deptTime"><b>Departure Time</b></label>&nbsp;
+            <select [(ngModel)]="busavail.time" name = "depttime">
+                <option value="" disabled selected>Select Time</option>
+                <option value="before 6 am">Before 6 am</option>
+                <option value="6 am to 12 pm">6 am to 12 pm</option>
+                <option value="12 pm to 6 pm">12pm to 6pm</option>
+                <option value="Afer 6pm">Afer 6pm</option>
+            </select><br>
+            <label for="type"><b>Bus Type</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select [(ngModel)]="busavail.type" name = "type">
+                <option value="" disabled selected>Select Type</option>
+                <option value="AC">AC</option>
+                <option value="Non AC">Non AC</option>
+            </select><br>
             <table class="table table-dark">
-                <thead >
+                <thead>
                     <tr>
                         <th>Bus ID</th>
                         <th>Name</th>
                         <th>Source</th>
                         <th>Destination</th>
                         <th>Fare</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,10 +62,15 @@
                         <td>{{f.source}}</td>
                         <td>{{f.destination}}</td>
                         <td>{{f.tfare}}</td>
+                        <td>{{f.day}}</td>
+                        <td>{{f.time}}</td>
+                        <td>{{f.type}}</td>
+                        <td><button (click)="book(f.bus_id,f.tfare)" type="button" class="btn btn-primary btn-block">Book</button></td>
                     </tr>
                 </tbody>
             </table>
-            <button (click)="getBus(from, to)" type="button" class="btn btn-primary btn-block">Search</button>
+            <button type="submit" class="btn btn-primary btn-block">Search</button><br>
+            </form>
         </div>
     </div>
 </div>

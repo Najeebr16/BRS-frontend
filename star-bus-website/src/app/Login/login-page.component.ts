@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login-page-service';
 import { Login } from './login';
+import { Router } from '@angular/router';
+import { LoginStatus } from './login-status';
 
 
  @Component({
@@ -11,8 +13,8 @@ import { Login } from './login';
  export class VerifyLoginComponent{
 
     login: Login = new Login();
-    response: string;
-    constructor( private lr:LoginService){
+    response: LoginStatus;
+    constructor( private lr: LoginService, private r: Router){
 
     }
 
@@ -20,8 +22,21 @@ import { Login } from './login';
        this.lr.sendToServer(this.login).subscribe(
           data =>{
                    
-                   this.response = data['status'];
-                   console.log(data);
+                   this.response = data;
+
+                   if(this.response.status == "VERIFIED"){
+                     sessionStorage.setItem('email', this.login.email);
+                     sessionStorage.setItem('password', this.login.password);
+                     sessionStorage.setItem('name',this.response.name);
+                     sessionStorage.setItem('userid',this.response.userid);
+                     this.r.navigate(["/dashboard"]);
+                   }
+                   else{
+                      this.r.navigate(["/login-page"]);
+                   }
+
+
+
                  }
       );
           }

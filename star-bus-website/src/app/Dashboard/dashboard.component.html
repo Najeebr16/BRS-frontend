@@ -1,11 +1,12 @@
-
 <ul class="sidenav">
-  <li><a class="active" routerLink="/booking" routerLinkActive="active">Bookings</a></li>
-  <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
-  <li><a routerLink="/changepass" routerLinkActive="active">Change Password</a></li>
-  <li><a routerLink="/wallet" routerLinkActive="active" >Wallet</a></li>
+    <li><a routerLink="/seats-page" active >Bookings</a></li>
+    <li><a routerLink="/profile" >Profile</a></li>
+    <li><a routerLink="/changepass" >Change Password</a></li>
+    <li><a routerLink="/wallet"  >Wallet</a></li>
 </ul>
-
-<div class="content">
- <h1>Hello :)</h1>
-</div>
+  
+  <div class= "content" style="margin-left:15%;padding:1px 16px;height:1000px;">
+    <h1>Welcome back, {{ name }}</h1>
+    <router-outlet></router-outlet>
+  </div>
+  

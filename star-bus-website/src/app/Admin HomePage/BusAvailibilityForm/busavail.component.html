@@ -1,0 +1,35 @@
+<form ngNativeValidate #rform= "ngForm" (ngSubmit)= "store()">
+    <div class="container">
+            <h1>Bus Availiabilty</h1>
+   <hr>
+
+   <label for="busname"><b>BusName</b></label>
+   <input type="text" placeholder="Enter your BusName"  name="name" [(ngModel)] = "busavail.busname"  required >
+
+   <label for="source"><b>Source</b></label>
+   <input type="text" placeholder="Enter source" name="source" [(ngModel)] = "busavail.source" required>
+
+   
+   <label for="destination"><b>Destination</b></label>
+   <input type="text" placeholder="Enter destination" name="destination" [(ngModel)] = "busavail.destination" required>
+
+   <label for="Tfare"><b>Tfare</b></label>
+   <input type="number" placeholder="Enter the fare " name="tfare" [(ngModel)]= "busavail.Tfare" required>
+
+   
+   <label for="day"><b>Day</b></label>
+   <input type="text" placeholder="Enter the day" name="day" [(ngModel)] = "busavail.day" required>
+
+   <label for="time"><b>Time</b></label>
+   <input type="text" placeholder="Enter the time" name="time" [(ngModel)] = "busavail.time" required>
+
+   <label for="type"><b>Type</b></label>
+   <input type="text" placeholder="Enter the type of bus" name="type" [(ngModel)] = "busavail.type" required>
+  
+   <label for="timerange"><b>TimeRange</b></label>
+   <input type="text" placeholder="Enter timerange" name="timerange" [(ngModel)] = "busavail.timerange" required>
+  
+   <button type="submit" class="registerbtn">Submit</button> 
+
+</div>
+</form>

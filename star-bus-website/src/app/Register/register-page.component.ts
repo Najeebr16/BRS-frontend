@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './user';
 import { UserService } from './register-page-service';
+import {Router} from '@angular/router';
 
 
  @Component({
@@ -13,7 +14,7 @@ import { UserService } from './register-page-service';
      confirmpass:String;
      array={password:""};
 
-     constructor( public ur:UserService){
+     constructor( public ur:UserService, public r: Router){
 
    }
    
@@ -29,13 +30,14 @@ import { UserService } from './register-page-service';
      store(){
        let check=true;
       if (this.confirmpass != this.users.password) {
-        this.array['password'] 
+        this.array['password']; 
         check=false;
         alert("password does not match!!");
     }
 
     if(check) {
-      let url='http://localhost:8181/bus/add'
+      let url="http://localhost:8181/user/registration/add";
+      this.r.navigate(['login-page']);
       this.ur.sendToServer(url,this.users).subscribe(data=>{
       
       });

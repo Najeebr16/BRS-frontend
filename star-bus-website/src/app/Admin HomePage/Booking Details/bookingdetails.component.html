@@ -1,0 +1,34 @@
+<div class="panel">
+   
+        <div class="panel-heading">{{ title }}</div>
+     
+        <div class="panel-body">
+           
+                <table class="table table-dark">
+                    <thead >
+                        <tr>
+                            <th>BookId</th>
+                            <th>UserId</th>
+                            <th>BusId</th>
+                            <th>Date of Booking</th>
+                            <th>Number of seats</th>
+                            <th>Total price</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let f of bookingdetailes'>
+                            <td>{{f.bookid}}</td>
+                            <td>{{f.id}}</td>
+                            <td>{{f.bus_id}}</td>
+                            <td>{{f.dateOfBooking}}</td>
+                            <td>{{f.noofSeats}}</td>
+                            <td>{{f.TotalPrice}}</td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+            </div>
+    
